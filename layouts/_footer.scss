@@ -1,0 +1,24 @@
+.footer {
+	background-color: darken($bg-one, 70%);
+	padding: 30px 30px;
+	line-height: 0.5em;
+	color: white;
+
+	&--logo {
+		width: 100px;
+		filter: contrast(0%) brightness(100);
+		margin-bottom: 15px;
+	}
+
+	&--icon {
+		display: flex;
+		height: 1.5em;
+
+		.fas {
+			margin-right: 10px;
+			vertical-align: bottom;
+			line-height: 43px;
+			font-size: small;
+		}
+	}
+}
