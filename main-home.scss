@@ -2,6 +2,7 @@
 @import './utils/mixin';
 @import './base/base';
 @import './components/logo';
+@import './components/button';
 @import './layouts/footer';
 
 
@@ -27,23 +28,14 @@
 	margin-top: 0px;
 	padding: 20px 25px 10px 25px;
 	font-weight: bold;
-	}
-
-	.explore-btn {
-		background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
-		color: white;
-		padding: 1em 2em;
-		border-radius: 2em;
-		border-style: none;
-		margin: 1em 0 2em 0;
-		box-shadow: 0px 3px 16px 3px rgba(0, 0, 0, 0.23);
+	
 	}
 }
 
 .functionality {
 	width: 90vw;
 	margin: auto;
-	
+
 	ol {
 		counter-reset: functionality;
 		list-style: none;
@@ -126,17 +118,45 @@
 			line-height: 0.5em;
 		}
 
-		& > .fa-heart {
-			float: right;
-			margin: -50px 30px;
-			font-size: 1.5rem;
+		.favorite {
+			&--inactive {
+
+				float: right;
+				margin: -50px 30px;
+				font-size: 1.5rem;
+				position: relative;
+				z-index: 1;
 
 			&:hover {
-				color: linear-gradient(to bottom right, $secondary-color, $primary-color);
-				/* Still have issue, hover not working */
+					& .favorite--hover {
+						cursor: pointer;
+						opacity: 1;
+						z-index: 1;
+					}
+				}
 
+				
 			}
+			
+
+			&--hover {
+				position: absolute;
+				float: right;
+				margin-left: -25px;
+				font-size: 1.6rem;
+				background: -webkit-linear-gradient(45deg, $secondary-color, $primary-color);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				opacity: 0;
+				z-index: -1;
+				transition: opacity 250ms;
+			}
+
+			
+		}
 			
 		}
 	}
-}
+
+
+

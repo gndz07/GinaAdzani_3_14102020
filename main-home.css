@@ -21,6 +21,16 @@ body {
   margin: 1em 0;
 }
 
+.button {
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: white;
+  padding: 1em 2em;
+  border-radius: 2em;
+  border-style: none;
+  margin: 1em 0 2em 0;
+  box-shadow: 0px 3px 16px 3px rgba(0, 0, 0, 0.23);
+}
+
 .footer {
   background-color: #373737;
   padding: 30px 30px;
@@ -64,15 +74,6 @@ body {
   margin-top: 0px;
   padding: 20px 25px 10px 25px;
   font-weight: bold;
-}
-.explore .explore-btn {
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  color: white;
-  padding: 1em 2em;
-  border-radius: 2em;
-  border-style: none;
-  margin: 1em 0 2em 0;
-  box-shadow: 0px 3px 16px 3px rgba(0, 0, 0, 0.23);
 }
 
 .functionality {
@@ -148,14 +149,29 @@ body {
   margin-left: 15px;
   line-height: 0.5em;
 }
-.resto-list__tile > .fa-heart {
+.resto-list__tile .favorite--inactive {
   float: right;
   margin: -50px 30px;
   font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
-.resto-list__tile > .fa-heart:hover {
-  color: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  /* Still have issue, hover not working */
+.resto-list__tile .favorite--inactive:hover .favorite--hover {
+  cursor: pointer;
+  opacity: 1;
+  z-index: 1;
+}
+.resto-list__tile .favorite--hover {
+  position: absolute;
+  float: right;
+  margin-left: -25px;
+  font-size: 1.6rem;
+  background: -webkit-linear-gradient(45deg, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
 }
 
 /*# sourceMappingURL=main-home.css.map */
