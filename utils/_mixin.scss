@@ -5,3 +5,9 @@
 @mixin border-radius--4corner {
 	border-radius: 1.5em 1.5em;
 }
+
+
+@mixin spin-load--border {
+	border-radius: 50%;
+	border: solid 15px transparent;
+}
