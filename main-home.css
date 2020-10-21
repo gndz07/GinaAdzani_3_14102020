@@ -11,6 +11,12 @@ body {
   font-family: "Roboto", sans-serif;
   width: 100vw;
   margin: auto;
+  z-index: 9999;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
 }
 
 .loader__spin--1 {
@@ -24,7 +30,7 @@ body {
   left: calc(50% - 60px);
   top: calc(50% - 60px);
   position: fixed;
-  z-index: 3;
+  z-index: -1;
   animation: spin 3s forwards linear;
 }
 .loader__spin--2 {
@@ -38,7 +44,7 @@ body {
   left: calc(50% - 40px);
   top: calc(50% - 40px);
   position: fixed;
-  z-index: 3;
+  z-index: -1;
   animation: spin 3s 300ms forwards linear;
 }
 .loader__spin--3 {
@@ -52,7 +58,7 @@ body {
   left: calc(50% - 20px);
   top: calc(50% - 20px);
   position: fixed;
-  z-index: 3;
+  z-index: -1;
   animation: spin 3s 600ms forwards linear;
 }
 
@@ -61,40 +67,120 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
-  z-index: 2;
+  z-index: -1;
   opacity: 0;
   animation: bg 3s;
+}
+
+.loader__bg--2 {
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+  animation: bg-2 3s;
 }
 
 @keyframes spin {
   25% {
     opacity: 1;
     transform: rotate(0.5turn);
+    z-index: 3;
   }
   50% {
     transform: rotate(1.2turn);
+    z-index: 3;
   }
   75% {
     transform: rotate(1.7turn);
     opacity: 1;
+    z-index: 3;
   }
   90% {
     opacity: 0.5;
+    z-index: 3;
+  }
+  99% {
+    z-index: 3;
   }
   100% {
     transform: rotate(2.5turn);
     opacity: 0;
+    z-index: 0;
   }
 }
 @keyframes bg {
   0% {
     opacity: 1;
+    z-index: 2;
   }
   50% {
     opacity: 0.8;
+    z-index: 2;
+  }
+  99% {
+    opacity: 0.5;
+    z-index: 2;
   }
   100% {
     opacity: 0;
+    z-index: 0;
+  }
+}
+@keyframes bg-2 {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+    z-index: 2;
+  }
+  10%, 20% {
+    opacity: 1;
+    transform: translateY(15%);
+    z-index: 2;
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(50%);
+    z-index: 2;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(70%);
+    z-index: 2;
+  }
+  90% {
+    opacity: 0.8;
+    transform: translateY(90%);
+    z-index: 2;
+  }
+  99% {
+    z-index: 2;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+    z-index: 0;
+  }
+}
+.page {
+  z-index: 9999;
+  opacity: 1;
+  animation: page 2s both;
+}
+
+@keyframes page {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .logo {
@@ -113,6 +199,7 @@ body {
   border-style: none;
   margin: 1em 0 2em 0;
   box-shadow: 0px 3px 16px 3px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
 }
 
 .favorite--inactive {
@@ -121,6 +208,7 @@ body {
   font-size: 1.5rem;
   position: relative;
   z-index: 1;
+  cursor: pointer;
 }
 .favorite--inactive:hover .favorite--hover {
   cursor: pointer;
@@ -202,6 +290,15 @@ body {
   border-radius: 2em;
   box-shadow: 0px 6px 23px 3px rgba(0, 0, 0, 0.24);
   counter-increment: functionality;
+  position: relative;
+}
+.functionality li a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .functionality li::before {
   content: counter(functionality);

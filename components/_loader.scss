@@ -10,7 +10,7 @@
 		left: calc(50% - 60px);
 		top: calc(50% - 60px);
 		position: fixed;
-		z-index: 3;
+		z-index: -1;
 		animation: spin 3s forwards linear;
 	}
 
@@ -24,7 +24,7 @@
 		left: calc(50% - 40px);
 		top: calc(50% - 40px);
 		position: fixed;
-		z-index: 3;
+		z-index: -1;
 		animation: spin 3s 300ms forwards linear;
 	}
 
@@ -38,7 +38,7 @@
 		left: calc(50% - 20px);
 		top: calc(50% - 20px);
 		position: fixed;
-		z-index: 3;
+		z-index: -1;
 		animation: spin 3s 600ms forwards linear;
 	}
 }
@@ -49,9 +49,19 @@
 	width: 100%;
 	height: 100%;
 	position: fixed;
-	z-index: 2;
+	z-index: -1;
 	opacity: 0;
 	animation: bg 3s;
+}
+
+.loader__bg--2 {
+	background-color: $bg-two;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -1;
+	opacity: 0;
+	animation: bg-2 3s;
 }
 
 
@@ -60,37 +70,120 @@
 	25% {
 		opacity: 1;
 		transform: rotate(0.5turn);
+		z-index: 3;
 	}
 
 	50% {
 		transform: rotate(1.2turn);
+		z-index: 3;
 	}
 
 	75% {
 		transform: rotate(1.7turn);
 		opacity: 1;
+		z-index: 3;
 	}
 
 	90% {
 		opacity: 0.5;
+		z-index: 3;
+	}
+
+	99% {
+		z-index: 3;
 	}
 
 	100% {
 		transform: rotate(2.5turn);
 		opacity: 0;
+		z-index: 0;
 	}
 }
 
 @keyframes bg {
 	0% {
 		opacity: 1;
+		z-index: 2;
 	}
 
 	50% {
-		opacity: 0.8
+		opacity: 0.8;
+		z-index: 2;
+	}
+
+	99% {
+		opacity: 0.5;
+		z-index: 2;
 	}
 
 	100% {
 		opacity: 0;
+		z-index: 0;
+	}
+}
+
+@keyframes bg-2 {
+	0% {
+		opacity: 1;
+		transform: translateY(0%);
+		z-index: 2;
+	}
+
+	10%, 20% {
+		opacity: 1;
+		transform: translateY(15%);
+		z-index: 2;
+	}
+
+	40% {
+		opacity: 1;
+		transform: translateY(50%);
+		z-index: 2;
+	}
+
+	60% {
+		opacity: 1;
+		transform: translateY(70%);
+		z-index: 2;
+	}
+
+	90% {
+		opacity: 0.8;
+		transform: translateY(90%);
+		z-index: 2;
+	}
+
+	99% {
+		z-index: 2;
+	}
+
+	100% {
+		transform: translateY(100%);
+		opacity: 0;
+		z-index: 0;
+	}
+}
+
+.page {
+	z-index: 9999;
+	opacity: 1;
+	animation: page 2s both;
+}
+
+@keyframes page {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	90% {
+		opacity: 0.9;
+	}
+
+	100% {
+		opacity: 1;
 	}
 }
