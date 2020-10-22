@@ -12,6 +12,10 @@
 	margin-top: -60px;
 	z-index: -1;
 	position: relative;
+
+	&--img {
+		width: 100vw;
+	}
 }
 
 .menu {
@@ -22,7 +26,7 @@
 	@include border-radius--2corner;
 
 	.resto-name {
-		font-family: 'Shrikhand', cursive;
+		font-family: $font-title;
 		font-size: 1.2em;
 
 		.favorite--inactive{
@@ -35,41 +39,86 @@
 .menu--course {
 	&--name {
 		font-size: medium;
-		border-bottom: 2px solid $tertiary-color;
+		
+		&::after {
+			content: "";
+			display: block;
+			width: 13%;
+			border-bottom: 2px solid $tertiary-color;
+		}
 	}
 
 	&--item {
 		background-color: white;
 		@include border-radius--4corner;
-		padding: 5px 15px;
+		padding-left: 15px;
 		margin-bottom: 10px;
+		line-height: 0;
+		display: grid;
+		grid-template-rows: repeat(2, auto);
+		grid-template-columns: 50% 50% 70px;
+		overflow: hidden;
+		transition: all 500ms;
 
-		h3 {
-			margin: 5px 0 5px 0;
+
+		&--name {
+			grid-column: 1/span 2;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			
 		}
 
 		&--desc {
-			display: flex;
-			justify-content: space-between;
+			grid-row: 2/span 1;
+			padding-bottom: 5px;
 
 			p {
-				margin: 5px 0 5px 0;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
+
+		}
+
+		&--price {
+			grid-row: 2/span 1;
+			grid-column: 2/span 1;
+			padding-bottom: 5px;
+			padding-right: 20px;
+			justify-self: end;
+			transition: all 500ms;
 		}
 
 		&--slider {
-			@include border-radius--2corner--side;
-			background-color: $tertiary-color;
-			padding: 15px 20px;
+			grid-column: 3/span 1;
+			grid-row: 1/span 2;
 			color: white;
-			width: fit-content;
-			float: right;
-
+			font-size: x-large;
+			background-color: $tertiary-color;
+			height: 100%;
+			width: 100%;
+			@include border-radius--2corner--side;
+			position: relative;
+			right: -70px;
+			transition: all 500ms;
 
 			.fa-check-circle {
-				font-size: medium;
+				margin: 25px 22px;
+				transition: all 500ms;
 			}
 		}
+
+		&:hover {
+			grid-template-columns: 1fr 1fr 70px;
+
+			.menu--course--item--slider {
+				right: 0;
+
+				.fa-check-circle {
+					transform: rotate(2turn);
+				}
+			}
+		}
+
 	}
 }
 
