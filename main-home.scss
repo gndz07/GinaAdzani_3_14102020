@@ -7,7 +7,69 @@
 @import './layouts/footer';
 @import './pages/home';
 
+.resto-header {
+	width: 100%;
+	margin-top: -60px;
+	z-index: -1;
+	position: relative;
+}
+
+.menu {
+	background-color: $bg-two;
+	padding: 10px 15px;
+	margin-top: -40px;
+	z-index: 1;
+	@include border-radius--2corner;
+
+	.resto-name {
+		font-family: 'Shrikhand', cursive;
+		font-size: 1.2em;
+
+		.favorite--inactive{
+			margin: -55px 30px;
+		}
+	}
+}
 
 
+.menu--course {
+	&--name {
+		font-size: medium;
+		border-bottom: 2px solid $tertiary-color;
+	}
 
+	&--item {
+		background-color: white;
+		@include border-radius--4corner;
+		padding: 5px 15px;
+		margin-bottom: 10px;
+
+		h3 {
+			margin: 5px 0 5px 0;
+		}
+
+		&--desc {
+			display: flex;
+			justify-content: space-between;
+
+			p {
+				margin: 5px 0 5px 0;
+			}
+		}
+
+		&--slider {
+			@include border-radius--2corner--side;
+			background-color: $tertiary-color;
+			padding: 15px 20px;
+			color: white;
+			width: fit-content;
+			float: right;
+
+
+			.fa-check-circle {
+				font-size: medium;
+			}
+		}
+	}
+}
 
