@@ -4,6 +4,10 @@
 	line-height: 0.5em;
 	color: white;
 
+	a {
+		color: inherit;
+	}
+
 	&--logo {
 		width: 100px;
 		filter: contrast(0%) brightness(100);
@@ -18,7 +22,11 @@
 			margin-right: 10px;
 			vertical-align: bottom;
 			line-height: 43px;
-			font-size: small;
+		
+		}
+
+		.fa-hands-helping {
+			font-size: 11px;
 		}
 	}
 }

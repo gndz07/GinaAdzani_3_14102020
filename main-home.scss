@@ -37,6 +37,9 @@
 
 
 .menu--course {
+
+	margin-bottom: 30px;
+
 	&--name {
 		font-size: medium;
 		
@@ -56,7 +59,7 @@
 		line-height: 1em;
 		display: grid;
 		grid-template-rows: repeat(2, auto);
-		grid-template-columns: 1fr 1fr 70px;
+		grid-template-columns: 80% auto 70px;
 		overflow: hidden;
 		transition: all 500ms ease-out;
 
@@ -68,18 +71,21 @@
 			h3 {
 				padding-top: 15px;
 				margin: 0px;
-				line-height: 1.1em;
+				line-height: 1.2em;
 				@include ellipsis;
+				font-size: 16px;
 			}
 		}
 
 		&--desc {
 			grid-row: 2/span 1;
 			padding-bottom: 5px;
+			transition: all 500ms ease-out;
 
 			p {
 				margin: 0px;
 				@include ellipsis;
+				font-size: 14px;
 			}
 
 		}
@@ -95,6 +101,7 @@
 
 			p {
 				margin: 0px;
+				font-weight: bold;
 			}
 		}
 
@@ -119,6 +126,10 @@
 
 		&:hover {
 			
+			.menu--course--item--desc {
+				margin-right: 50px;
+			}
+
 			.menu--course--item--price {
 				transform: translateX(-50px);
 			}
