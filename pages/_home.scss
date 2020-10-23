@@ -40,9 +40,15 @@
 		padding: 2em 2em 2em 0;
 		margin: 1em 0;
 		border-radius: 2em;
-		box-shadow: 0px 6px 23px 3px rgba(0, 0, 0, 0.24);
+		box-shadow: $box-shadow;
 		counter-increment: functionality;
 		position: relative;
+
+		&:hover {
+			.fas {
+				color: $primary-color;
+			}
+		}
 
 		a::after {
 			content: "";
@@ -66,10 +72,6 @@
 
 		.fas {
 			margin-right: 2em;
-		}
-
-		.fa-store {
-			color: $primary-color;
 		}
 	}
 }
