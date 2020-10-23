@@ -60,6 +60,7 @@
 
 		&--name {
 			grid-column: 1/span 2;
+			transition: all 500ms ease-out;
 			
 
 			h3 {
@@ -119,6 +120,11 @@
 		}
 
 		&:hover {
+
+			.menu--course--item--name {
+				margin-right: 10px;
+				@include ellipsis;
+			}
 			
 			.menu--course--item--desc {
 				margin-right: 50px;

@@ -438,6 +438,7 @@ a {
 }
 .menu--course--item--name {
   grid-column: 1/span 2;
+  transition: all 500ms ease-out;
 }
 .menu--course--item--name h3 {
   padding-top: 15px;
@@ -489,6 +490,12 @@ a {
 .menu--course--item--slider .fa-check-circle {
   margin: 25px 22px;
   transition: all 500ms ease-out;
+}
+.menu--course--item:hover .menu--course--item--name {
+  margin-right: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .menu--course--item:hover .menu--course--item--desc {
   margin-right: 50px;
