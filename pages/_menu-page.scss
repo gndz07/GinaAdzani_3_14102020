@@ -1,0 +1,163 @@
+.resto-header {
+	width: 100%;
+	margin-top: -60px;
+	z-index: -1;
+	position: relative;
+
+	&--img {
+		width: 100vw;
+	}
+}
+
+.menu {
+	background-color: $bg-two;
+	padding: 10px 15px;
+	margin-top: -40px;
+	z-index: 1;
+	@include border-radius--2corner;
+
+	.resto-name {
+		font-family: $font-title;
+		font-size: 1.2em;
+
+		.favorite--inactive{
+			margin: -55px 30px;
+		}
+	}
+}
+
+
+.menu--course {
+
+	margin-bottom: 30px;
+
+	&--name {
+		font-size: medium;
+		
+		&::after {
+			content: "";
+			display: block;
+			width: 12%;
+			border-bottom: 2px solid $tertiary-color;
+		}
+	}
+
+	&--item {
+		background-color: white;
+		@include border-radius--4corner;
+		box-shadow: $box-shadow;
+		padding-left: 15px;
+		margin-bottom: 10px;
+		line-height: 1em;
+		display: grid;
+		grid-template-rows: repeat(2, auto);
+		grid-template-columns: 80% auto 70px;
+		overflow: hidden;
+		transition: all 500ms ease-out;
+
+
+		&--name {
+			grid-column: 1/span 2;
+			
+
+			h3 {
+				padding-top: 15px;
+				margin: 0px;
+				line-height: 1.2em;
+				@include ellipsis;
+				font-size: 18px;
+			}
+		}
+
+		&--desc {
+			grid-row: 2/span 1;
+			padding-bottom: 5px;
+			transition: all 500ms ease-out;
+
+			p {
+				margin: 0px;
+				@include ellipsis;
+				font-size: 15px;
+			}
+
+		}
+
+		&--price {
+			grid-row: 2/span 1;
+			grid-column: 2/span 1;
+			padding-bottom: 5px;
+			padding-right: 10px;
+			margin-right: -50px;
+			justify-self: end;
+			transition: all 500ms ease-out;
+
+			p {
+				margin: 0px;
+				font-weight: bold;
+			}
+		}
+
+		&--slider {
+			grid-column: 3/span 1;
+			grid-row: 1/span 2;
+			color: white;
+			font-size: x-large;
+			background-color: $tertiary-color;
+			height: 100%;
+			width: 100%;
+			@include border-radius--2corner--side;
+			position: relative;
+			right: -70px;
+			transition: all 500ms ease-out;
+			
+			.fa-check-circle {
+				margin: 25px 22px;
+				transition: all 500ms ease-out;
+			}
+		}
+
+		&:hover {
+			
+			.menu--course--item--desc {
+				margin-right: 50px;
+			}
+
+			.menu--course--item--price {
+				transform: translateX(-50px);
+			}
+
+			.menu--course--item--slider {
+				transform: translateX(-70px);
+				
+
+				.fa-check-circle {
+					transform: rotate(2turn);
+					
+				}
+			}
+		}
+
+	}
+}
+
+.resto-menu {
+	animation: menu-appearance 500ms both;
+	@for $i from 1 through 13 {
+		&--#{$i} {
+			animation-delay: 100ms * $i;
+		}
+	}
+
+}
+
+@keyframes menu-appearance {
+	0% {
+		opacity: 0;
+		transform: translateY(5px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}

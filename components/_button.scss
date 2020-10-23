@@ -1,13 +1,18 @@
 .button {
 		background-image: $button-gradient-color;
 		color: white;
-		padding: 1em 2em;
+		padding: 1em 3em;
 		border-radius: 2em;
 		border-style: none;
 		margin: 1em 0 2em 0;
 		box-shadow: 0px 3px 16px 3px rgba(0, 0, 0, 0.23);
 		cursor: pointer;
 		transition: all 200ms;
+
+		&-order {
+			text-align: center;
+			margin-bottom: 30px;
+		}
 
 
 		&:hover {
