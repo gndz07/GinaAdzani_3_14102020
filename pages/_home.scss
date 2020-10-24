@@ -162,15 +162,21 @@
 /* For PC */
 
 @media all and (min-width: 1024px) {
-	.resto-list--flex {
+
+	.resto-list {
+		padding-left: 50px;
+
+		&--flex {
 		display: flex;
 		flex-wrap: wrap;
+		}
 
-	}
-
-	.resto-list__tile {
+		&__tile {
 		width: 45%;
+		}
+
 	}
+
 }
 
 /* For Tablet */

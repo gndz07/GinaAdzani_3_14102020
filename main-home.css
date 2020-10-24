@@ -427,11 +427,13 @@ a {
 /* Media queries for restaurant list */
 /* For PC */
 @media all and (min-width: 1024px) {
+  .resto-list {
+    padding-left: 50px;
+  }
   .resto-list--flex {
     display: flex;
     flex-wrap: wrap;
   }
-
   .resto-list__tile {
     width: 45%;
   }
