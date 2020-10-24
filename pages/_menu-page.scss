@@ -11,6 +11,35 @@
 	}
 }
 
+
+/* Media queries for resto-header */
+
+/* For Tablet */
+
+
+@media all and (min-width: 768px) and (max-width : 1024px) {
+	.resto-header {
+		&--img {
+			height: 500px;
+		}
+	}
+}
+
+/* For desktop */
+
+@media all and (min-width: 1024px) {
+	.resto-header {
+		&--img {
+			height: 700px;
+		}
+	}
+}
+
+/* End of media queries */
+
+
+
+
 .menu {
 	background-color: $bg-two;
 	padding: 10px 15px;
@@ -21,6 +50,10 @@
 	.resto-name {
 		font-family: $font-title;
 		font-size: 1.2em;
+
+		h1 {
+			font-weight: 500;
+		}
 
 		.favorite--inactive{
 			margin: -55px 10px;
@@ -169,3 +202,48 @@
 		transform: translateY(0px);
 	}
 }
+
+
+/* Media queries for menu */
+
+/* For Tablet */
+
+
+@media all and (min-width: 768px) and (max-width : 1024px) {
+	.menu {
+		padding: 30px 100px;
+	}
+}
+
+
+/* For desktop */
+
+@media all and (min-width: 1024px) {
+	.menu-flex {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.menu {
+
+		&--course {
+			width: 45%;
+			margin: 0 25px;
+		}
+
+		.resto-name {
+			h1 {
+				margin-left: 60px;
+			}
+
+			.favorite--inactive {
+				margin-top: -55px;
+				margin-right: 1000px;
+			}
+		}
+	}
+}
+
+/* End of media queries */
+

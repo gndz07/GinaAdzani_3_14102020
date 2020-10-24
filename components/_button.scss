@@ -16,7 +16,7 @@
 
 
 		&:hover {
-			opacity: 0.9;
+			opacity: 0.8;
 		}
 	}
 
@@ -67,4 +67,11 @@
 	position: absolute;
 	padding: 23px 20px;
 	cursor: pointer;
+}
+
+@media all and (min-width: 768px) {
+	.back-menu {
+		font-size: larger;
+		padding-left: 40px;
+	}
 }
