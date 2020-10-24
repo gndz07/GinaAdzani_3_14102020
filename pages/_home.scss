@@ -77,6 +77,29 @@
 }
 
 
+/* Media queries for functionality part */
+
+/* For Tablet */
+
+
+@media all and (min-width: 768px) and (max-width : 1024px) {
+	.functionality {
+		width: 50%;
+	}
+}
+
+/* For PC */
+
+@media all and (min-width: 1024px) {
+	.functionality {
+		width: 40%;
+	}
+}
+
+
+/* End of functionality Media queries */
+
+
 /* Main section */
 
 
@@ -133,5 +156,36 @@
 	}
 }
 
+
+/* Media queries for restaurant list */
+
+/* For PC */
+
+@media all and (min-width: 1024px) {
+	.resto-list--flex {
+		display: flex;
+		flex-wrap: wrap;
+
+	}
+
+	.resto-list__tile {
+		width: 45%;
+	}
+}
+
+/* For Tablet */
+
+
+@media all and (min-width: 768px) and (max-width : 1024px) {
+	.resto-list {
+		padding: 10px 30px 60px 50px;
+
+		&__tile {
+			margin-bottom: 50px;
+		}
+	}
+}
+
+/* End of Media queries */
 
 

@@ -271,6 +271,21 @@ a {
   font-size: 11px;
 }
 
+/* Footer media queries */
+@media all and (min-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .footer--logo {
+    width: 150px;
+  }
+  .footer--icon {
+    justify-content: center;
+  }
+  .footer--icon .fa-hands-helping {
+    font-size: 13px;
+  }
+}
 .location {
   display: flex;
   align-items: center;
@@ -338,6 +353,20 @@ a {
   margin-right: 2em;
 }
 
+/* Media queries for functionality part */
+/* For Tablet */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .functionality {
+    width: 50%;
+  }
+}
+/* For PC */
+@media all and (min-width: 1024px) {
+  .functionality {
+    width: 40%;
+  }
+}
+/* End of functionality Media queries */
 /* Main section */
 .resto-list {
   background-color: #f6f6f6;
@@ -384,6 +413,28 @@ a {
   line-height: 0.5em;
 }
 
+/* Media queries for restaurant list */
+/* For PC */
+@media all and (min-width: 1024px) {
+  .resto-list--flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .resto-list__tile {
+    width: 45%;
+  }
+}
+/* For Tablet */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .resto-list {
+    padding: 10px 30px 60px 50px;
+  }
+  .resto-list__tile {
+    margin-bottom: 50px;
+  }
+}
+/* End of Media queries */
 .resto-header {
   width: 100%;
   margin-top: -60px;
