@@ -3,6 +3,12 @@
 /*cyan*/
 /*deep gray*/
 /*light gray*/
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-width: 100vw;
+}
+
 header {
   text-align: center;
 }
@@ -12,6 +18,9 @@ body {
   width: 100vw;
   margin: auto;
   z-index: 9999;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-width: 100vw;
 }
 
 a {
@@ -264,8 +273,11 @@ a {
 .footer a {
   color: inherit;
 }
+.footer a p {
+  font-size: 15px;
+}
 .footer--logo {
-  width: 100px;
+  width: 150px;
   filter: contrast(0%) brightness(100);
   margin-bottom: 15px;
 }
@@ -281,6 +293,9 @@ a {
 .footer--icon .fa-hands-helping {
   font-size: 11px;
 }
+.footer--icon a p {
+  font-size: larger;
+}
 
 /* Footer media queries */
 @media all and (min-width: 768px) {
@@ -288,13 +303,18 @@ a {
     text-align: center;
   }
   .footer--logo {
-    width: 150px;
+    width: 200px;
   }
   .footer--icon {
     justify-content: center;
   }
   .footer--icon .fa-hands-helping {
     font-size: 13px;
+  }
+}
+@media all and (min-width: 1024px) {
+  .footer a p {
+    font-size: larger;
   }
 }
 .location {
