@@ -293,9 +293,6 @@ a {
 .footer--icon .fa-hands-helping {
   font-size: 11px;
 }
-.footer--icon a p {
-  font-size: larger;
-}
 
 /* Footer media queries */
 @media all and (min-width: 768px) {
@@ -310,11 +307,6 @@ a {
   }
   .footer--icon .fa-hands-helping {
     font-size: 13px;
-  }
-}
-@media all and (min-width: 1024px) {
-  .footer a p {
-    font-size: larger;
   }
 }
 .location {
@@ -351,6 +343,7 @@ a {
   font-weight: 600;
 }
 .functionality li {
+  display: flex;
   background-color: #f6f6f6;
   padding: 2em 2em 2em 0;
   margin: 1em 0;
@@ -395,6 +388,12 @@ a {
 @media all and (min-width: 1024px) {
   .functionality {
     width: 40%;
+  }
+}
+/* For very small screen */
+@media all and (max-width: 350px) {
+  .functionality li::before {
+    padding: 11px 13px;
   }
 }
 /* End of functionality Media queries */

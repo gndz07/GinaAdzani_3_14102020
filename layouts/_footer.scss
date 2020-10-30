@@ -33,11 +33,6 @@
 			font-size: 11px;
 		}
 
-		a{
-			p {
-				font-size: larger;
-			}
-		}
 	}
 }
 
@@ -62,8 +57,3 @@
 	}
 }
 
-@media all and (min-width: 1024px) {
-	.footer a p {
-		font-size: larger;
-	}
-}
