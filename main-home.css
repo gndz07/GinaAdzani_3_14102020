@@ -547,7 +547,7 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 1em;
 }
 .menu--course--item--desc {
   grid-row: 2/span 1;
@@ -559,7 +559,7 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 15px;
+  font-size: 0.9em;
 }
 .menu--course--item--price {
   grid-row: 2/span 1;
@@ -688,6 +688,12 @@ a {
   .menu .resto-name .favorite--inactive {
     margin-top: -55px;
     margin-right: 1000px;
+  }
+}
+/* For very small screen */
+@media all and (max-width: 350px) {
+  .menu .resto-name h1 {
+    font-size: 1.35em;
   }
 }
 /* End of media queries */

@@ -101,7 +101,7 @@
 				margin: 0px;
 				line-height: 1.2em;
 				@include ellipsis;
-				font-size: 18px;
+				font-size: 1em;
 			}
 		}
 
@@ -113,7 +113,7 @@
 			p {
 				margin: 0px;
 				@include ellipsis;
-				font-size: 15px;
+				font-size: 0.9em;
 			}
 
 		}
@@ -244,6 +244,17 @@
 		}
 	}
 }
+
+
+/* For very small screen */
+
+@media all and (max-width: 350px) {
+	.menu .resto-name h1 {
+		font-size: 1.35em;
+	}
+}
+
+
 
 /* End of media queries */
 
