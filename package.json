@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch main-home.scss:main-home.css"
+    "sass": "sass --watch main-home.scss:main-home.css",
+    "prefix":"postcss main-home.css --use autoprefixer -d."
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "browserslist": "last 4 versions"
 }
